@@ -1,0 +1,162 @@
+:root
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif
+  line-height: 1.5
+  font-weight: 400
+  color-scheme: light dark
+  font-synthesis: none
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+body
+  margin: 0
+  display: flex
+  place-items: center
+  min-width: 320px
+  min-height: 100vh
+  background: var(--background-color)
+  color: var(--text-color)
+  transition: background-color 0.3s, color 0.3s
+
+  &.body--dark
+    --background-color: #121212
+    --text-color: #E0E0E0
+    --card-background: #1E1E1E
+    background: #0A0A0A
+
+  &.body--light
+    --background-color: #FFFFFF
+    --text-color: #333333
+    --card-background: #FFFFFF
+    background:  #1E90FF
+
+h1
+  font-size: 4em
+  line-height: 1.1
+  color: var(--text-color)
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2)
+
+button
+  border-radius: 8px
+  border: 1px solid transparent
+  padding: 0.6em 1.2em
+  font-size: 1em
+  font-weight: 500
+  font-family: inherit
+  background-color: rgba(255, 255, 255, 0.1)
+  color: var(--text-color)
+  cursor: pointer
+  transition: background-color 0.25s, transform 0.2s
+
+  &:hover
+    background-color: rgba(255, 255, 255, 0.2)
+    transform: scale(1.05)
+
+  &:focus,
+  &:focus-visible
+    outline: 4px auto -webkit-focus-ring-color
+
+.toogle-temp
+  margin-top: 15px
+  padding: 4px
+
+.toogle-theme
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 16px
+  margin: 16px
+
+  p
+    margin: 0
+
+.lang-switcher
+  display: flex
+  justify-content: center
+  gap: 16px
+  margin: 16px
+
+.weather-container
+  margin: 0 auto
+  max-width: 600px
+  padding: 0 16px
+  text-align: left
+
+#app
+  max-width: 1280px
+  margin: 0 auto
+  padding: 2rem
+  text-align: center
+
+.weather-details
+  margin-top: 20px
+  background-color: rgba(255, 255, 255, 0.1)
+  padding: 20px
+  border-radius: 12px
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+  transition: transform 0.3s, box-shadow 0.3s
+  text-align: left
+
+  &:hover
+    transform: translateY(-5px)
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15)
+
+  p
+    margin: 8px 0
+    font-size: 1.2em
+
+.weather-info
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
+  gap: 16px
+  margin-top: 20px
+
+.weather-card h2
+  text-align: center
+  margin: 0
+
+  .info-card
+    background-color: rgba(255, 255, 255, 0.1)
+    padding: 16px
+    border-radius: 8px
+    text-align: center
+    transition: transform 0.3s, box-shadow 0.3s
+
+    &:hover
+      transform: translateY(-5px)
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15)
+
+    p
+      margin: 8px 0
+      font-size: 1.1em
+
+@media (max-width: 768px)
+  h1
+    font-size: 3em
+
+  .toogle-theme, .lang-switcher
+    flex-direction: column
+    gap: 8px
+
+  .weather-container
+    padding: 0 8px
+
+  .weather-details
+    padding: 16px
+
+  .weather-info
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr))
+
+@media (max-width: 480px)
+  h1
+    font-size: 2.5em
+
+  button
+    padding: 0.5em 1em
+    font-size: 0.9em
+
+  .weather-details
+    padding: 12px
+
+  .weather-info
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))
